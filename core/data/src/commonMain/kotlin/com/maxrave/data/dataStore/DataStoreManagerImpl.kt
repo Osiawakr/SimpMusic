@@ -80,7 +80,7 @@ internal class DataStoreManagerImpl(
 
     override val location: Flow<String> =
         settingsDataStore.data.map { preferences ->
-            preferences[LOCATION] ?: "VN"
+            preferences[LOCATION] ?: "IN"
         }
 
     override suspend fun setLocation(location: String) {
@@ -284,7 +284,7 @@ internal class DataStoreManagerImpl(
 
     override val saveRecentSongAndQueue: Flow<String> =
         settingsDataStore.data.map { preferences ->
-            preferences[SAVE_RECENT_SONG] ?: FALSE
+            preferences[SAVE_RECENT_SONG] ?: TRUE
         }
 
     override suspend fun setSaveRecentSongAndQueue(save: Boolean) {
@@ -882,7 +882,7 @@ internal class DataStoreManagerImpl(
 
     override val autoCheckForUpdates =
         settingsDataStore.data.map { preferences ->
-            preferences[AUTO_CHECK_FOR_UPDATES] ?: TRUE
+            preferences[AUTO_CHECK_FOR_UPDATES] ?: FALSE
         }
 
     override suspend fun setAutoCheckForUpdates(autoCheck: Boolean) {
@@ -1101,7 +1101,7 @@ internal class DataStoreManagerImpl(
 
     override val killServiceOnExit: Flow<String> =
         settingsDataStore.data.map { preferences ->
-            preferences[KILL_SERVICE_ON_EXIT] ?: FALSE
+            preferences[KILL_SERVICE_ON_EXIT] ?: TRUE
         }
 
     override suspend fun setKillServiceOnExit(kill: Boolean) {
