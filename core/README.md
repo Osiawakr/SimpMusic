@@ -1,2 +1,2 @@
 # core
-App's core modules
+SimpMusic app's core modules
